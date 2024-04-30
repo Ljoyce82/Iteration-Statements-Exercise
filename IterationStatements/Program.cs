@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.ComponentModel.Design;
+using System.Runtime.InteropServices;
 
 namespace IterationStatements
 {
@@ -69,14 +71,33 @@ namespace IterationStatements
         //TryParse()
         public static bool CanVote()
         {
-            string ageInput = "20";
-            if (int.TryParse(ageInput, out int age))
-            {
-                return age >= 18;
-            }
-            else
-            {
-                return false;
+            while (true)
+            { 
+                Console.WriteLine("Enter your age to see if you can vote");
+                string ageInput = Console.ReadLine();
+            
+            
+
+
+                if (int.TryParse(ageInput, out int age))
+                {
+                    if (age >= 18)
+                    {
+                        Console.WriteLine("You can Vote");
+                        return true;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Your not old enough to Vote sorry!");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("That is not real age please enter your age");
+                    continue;
+                }
             }
         }
         //Heatin Up Section:
@@ -131,27 +152,37 @@ namespace IterationStatements
         static void Main()
         {
 
-            ThousandLoop();
+          /*  ThousandLoop();
+            Console.ReadLine();
 
             NineLoop();
+            Console.ReadLine();*/
 
-            bool result = Program.EqualsMe();
+           /* bool result = Program.EqualsMe();
             Console.WriteLine(result);
+            Console.ReadLine();*/
 
-            bool isEven = OddOrEven();
+            /*bool isEven = OddOrEven();
             Console.WriteLine(isEven);
+            Console.ReadLine();*/
 
-            string total = Program.PosOrNeg();
+          /*  string total = Program.PosOrNeg();
             Console.WriteLine(result);
+            Console.ReadLine();*/
 
-            bool howOld = Program.CanVote();
+            /*bool howOld = Program.CanVote();
             Console.WriteLine(howOld);
+            Console.ReadLine();*/
+            CanVote();
 
-            YourNum();
+            /*YourNum();
+            Console.ReadLine();
+                
 
             Program.MultiplyTable(5);
+            Console.ReadLine();
 
-
+*/
 
 
         }
