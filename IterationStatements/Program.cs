@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 
 namespace IterationStatements
@@ -48,20 +49,30 @@ namespace IterationStatements
         //Write a method to check whether a given number is positive or negative
         public static string PosOrNeg()
         {
-            int num = -18;
+            Console.WriteLine("Enter a number: ");
+            string numStr = Console.ReadLine();
 
-            if (num > 0)
-            {
-                return "Positive";
-            }
-            else if (num < 0)
-            {
-                return "Negative";
+            if (int.TryParse(numStr, out int num))
+            { 
+
+                if (num > 0)
+                {
+                    return "Positive";
+                }
+                else if (num < 0)
+                {
+                    return "Negative";
+                }
+                else
+                {
+                    return "Zero";
+                }
             }
             else
             {
-                return "Zero";
+                return "That is not a valid number.";
             }
+           
         }
 
 
@@ -69,7 +80,7 @@ namespace IterationStatements
         //Hint: Use Parse or the safer TryParse() for an extra challenge
         //Parse()
         //TryParse()
-        public static bool CanVote()
+      /*  public static bool CanVote()
         {
             while (true)
             { 
@@ -99,7 +110,7 @@ namespace IterationStatements
                     continue;
                 }
             }
-        }
+        }*/
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
       
@@ -152,28 +163,24 @@ namespace IterationStatements
         static void Main()
         {
 
-          /*  ThousandLoop();
-            Console.ReadLine();
+            /*  ThousandLoop();
+              Console.ReadLine();
 
-            NineLoop();
-            Console.ReadLine();*/
+              NineLoop();
+              Console.ReadLine();*/
 
-           /* bool result = Program.EqualsMe();
-            Console.WriteLine(result);
-            Console.ReadLine();*/
+            /* bool result = Program.EqualsMe();
+             Console.WriteLine(result);
+             Console.ReadLine();*/
 
             /*bool isEven = OddOrEven();
             Console.WriteLine(isEven);
             Console.ReadLine();*/
 
-          /*  string total = Program.PosOrNeg();
-            Console.WriteLine(result);
-            Console.ReadLine();*/
+            string userNum = PosOrNeg();
+            Console.WriteLine(userNum);
 
-            /*bool howOld = Program.CanVote();
-            Console.WriteLine(howOld);
-            Console.ReadLine();*/
-            CanVote();
+            // CanVote();
 
             /*YourNum();
             Console.ReadLine();
