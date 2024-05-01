@@ -2,6 +2,7 @@
 using System.ComponentModel.Design;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
+using System.Transactions;
 
 namespace IterationStatements
 {
@@ -32,24 +33,57 @@ namespace IterationStatements
 
         public static bool EqualsMe()
         {
-            int a = 5;
-            int b = 13;
-            var isEqual = a == b; return isEqual;
-        }
+            while (!false) 
+            {
+                Console.WriteLine("Please enter two numbers with spaces to compare for equality: ");
+
+                string input = Console.ReadLine();
+                string[] numbers = input.Split(' ');
+
+                if (numbers.Length != 2)
+                {
+                    Console.WriteLine("Please enter two numbers with space between. ");
+                    continue;// trying make so user cant purposflly crash prog
+                }
+
+                if (int.TryParse(numbers[0], out int a) && int.TryParse(numbers[1], out int b))
+                {
+                    return a == b;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter number only. ");
+
+
+                }
+              continue;
+            }
+         }
 
         //Write a method to check whether a given number is even or odd
         public static bool OddOrEven()
         {
-            int number = 14;
-            return number % 2 == 0 ? true : false;
+           
+            Console.WriteLine("Enter your number to check for odd or even: ");
 
+            string input = Console.ReadLine();
+
+            if (int.TryParse(input, out int number))
+            {
+                return number % 2 == 0 ? true : false;
+            }
+            else
+            {
+                Console.WriteLine("That is not a number please try again");
+                return false;
+            }
         }
 
 
         //Write a method to check whether a given number is positive or negative
         public static string PosOrNeg()
         {
-            Console.WriteLine("Enter a number: ");
+            Console.WriteLine("Enter a number to check for positive or negative: ");
             string numStr = Console.ReadLine();
 
             if (int.TryParse(numStr, out int num))
@@ -80,14 +114,14 @@ namespace IterationStatements
         //Hint: Use Parse or the safer TryParse() for an extra challenge
         //Parse()
         //TryParse()
-      /*  public static bool CanVote()
+        public static bool CanVote()
         {
             while (true)
-            { 
+            {
                 Console.WriteLine("Enter your age to see if you can vote");
                 string ageInput = Console.ReadLine();
-            
-            
+
+
 
 
                 if (int.TryParse(ageInput, out int age))
@@ -110,10 +144,10 @@ namespace IterationStatements
                     continue;
                 }
             }
-        }*/
+        }
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
-      
+
         public static bool YourNum()
         {
             int num;
@@ -169,27 +203,27 @@ namespace IterationStatements
               NineLoop();
               Console.ReadLine();*/
 
-            /* bool result = Program.EqualsMe();
-             Console.WriteLine(result);
-             Console.ReadLine();*/
+            bool isEqual = EqualsMe();
+            Console.WriteLine(isEqual ? "The numbers are equal" : "The numbers are not equal. ");
+            Console.ReadLine();
 
-            /*bool isEven = OddOrEven();
-            Console.WriteLine(isEven);
-            Console.ReadLine();*/
+           /* bool isEven = OddOrEven();
+            Console.WriteLine(isEven ? "The number is even. " : "The number is odd. ");
+            Console.ReadLine();
 
             string userNum = PosOrNeg();
             Console.WriteLine(userNum);
 
-            // CanVote();
+            CanVote();
 
-            /*YourNum();
+            YourNum();
             Console.ReadLine();
                 
 
             Program.MultiplyTable(5);
             Console.ReadLine();
-
 */
+
 
 
         }
