@@ -12,6 +12,8 @@ namespace IterationStatements
         //Write a method that will print to the console all numbers 1000 through - 1000
         public static void ThousandLoop()
         {
+            Console.WriteLine("Printing from 1000 to -1000!");
+            Console.ReadLine();
             for (int i = 1000; i >= -1000; --i)
             {
                 Console.WriteLine(i);
@@ -22,6 +24,8 @@ namespace IterationStatements
         //Write a method that will print to the console numbers 3 through 999 by 3 each time
         public static void NineLoop()
         {
+            Console.WriteLine("Count to 999 by 3");
+            Console.ReadLine();
             for (int i = 0; i < 999; i += 3)
             {
                 Console.WriteLine(i);
@@ -155,7 +159,7 @@ namespace IterationStatements
 
             while (!isValid)
             {
-                Console.WriteLine("Enter a number: ");
+                Console.WriteLine("Enter a number between 10 and -10: ");
                 string userInput = Console.ReadLine();
 
                 if (int.TryParse(userInput, out num))
@@ -180,15 +184,28 @@ namespace IterationStatements
         }
 
         //Write a method to display the multiplication table(from 1 to 12) of a given integer
-            public static void MultiplyTable(int number)
+        public static void MultiplyTable()
+        {
+            Console.WriteLine("Enter number to multiply: ");
+            string userInput = Console.ReadLine();
+
+            if (int.TryParse(userInput, out int number))
             {
-            Console.WriteLine($"Multipilcation table for {number}");
-             for (int i = 1; i <= 12; i++)
-            {
-                int result = number * i;
-                Console.WriteLine($"{number} * {i} = {result}");
+                Console.WriteLine($"Your {number} multiplied from 1-12");
+
+                for (int i = 1; i <= 12; i++)
+                {
+                    int result = number * i;
+                    Console.WriteLine($"{number} * {i} = {result}");
+                }
             }
-        }
+                else
+                {
+                    Console.WriteLine("Please enter a valid number");
+                }
+            
+        }   
+
               
 
 
@@ -197,19 +214,17 @@ namespace IterationStatements
         static void Main()
         {
 
-            /*  ThousandLoop();
-              Console.ReadLine();
+            ThousandLoop();
+            Console.ReadLine();
 
-              NineLoop();
-              Console.ReadLine();*/
+            NineLoop();
+            Console.ReadLine();
 
             bool isEqual = EqualsMe();
             Console.WriteLine(isEqual ? "The numbers are equal" : "The numbers are not equal. ");
-            Console.ReadLine();
 
-           /* bool isEven = OddOrEven();
+            bool isEven = OddOrEven();
             Console.WriteLine(isEven ? "The number is even. " : "The number is odd. ");
-            Console.ReadLine();
 
             string userNum = PosOrNeg();
             Console.WriteLine(userNum);
@@ -217,12 +232,12 @@ namespace IterationStatements
             CanVote();
 
             YourNum();
-            Console.ReadLine();
-                
 
-            Program.MultiplyTable(5);
-            Console.ReadLine();
-*/
+            MultiplyTable();
+
+
+           
+
 
 
 
