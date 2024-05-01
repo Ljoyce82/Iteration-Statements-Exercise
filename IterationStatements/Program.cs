@@ -12,7 +12,7 @@ namespace IterationStatements
         //Write a method that will print to the console all numbers 1000 through - 1000
         public static void ThousandLoop()
         {
-            Console.WriteLine("Printing from 1000 to -1000!");
+            Console.WriteLine("Printing from 1000 to -1000! Press Enter");
             Console.ReadLine();
             for (int i = 1000; i >= -1000; --i)
             {
@@ -24,7 +24,7 @@ namespace IterationStatements
         //Write a method that will print to the console numbers 3 through 999 by 3 each time
         public static void NineLoop()
         {
-            Console.WriteLine("Count to 999 by 3");
+            Console.WriteLine("Count to 999 by 3, Press Enter");
             Console.ReadLine();
             for (int i = 0; i < 999; i += 3)
             {
@@ -215,10 +215,10 @@ namespace IterationStatements
         {
 
             ThousandLoop();
-            Console.ReadLine();
+           // Console.ReadLine();
 
             NineLoop();
-            Console.ReadLine();
+           // Console.ReadLine();
 
             bool isEqual = EqualsMe();
             Console.WriteLine(isEqual ? "The numbers are equal" : "The numbers are not equal. ");
